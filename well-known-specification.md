@@ -11,9 +11,14 @@ The /.well-known/tpcd/grace-period.json resource must follow the schema stated b
 ```
 {
   "type": "object",
-  "required": ["OptOutPercentage"],
+  "required": ["FirstPartyOptOutPercentage", "ThirdPartyOptOutPercentage"],
   "properties": {
-    "OptOutPercentage": {
+    "FirstPartyOptOutPercentage": {
+      "type": "integer",
+      "minimum": 0
+      "maximum": 100
+    },
+    "ThirdPartyOptOutPercentage": {
       "type": "integer",
       "minimum": 0
       "maximum": 100

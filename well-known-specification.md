@@ -15,13 +15,11 @@ The /.well-known/tpcd/grace-period.json resource must follow the schema stated b
   "properties": {
     "FirstPartyOptOutPercentage": {
       "type": "integer",
-      "minimum": 0
-      "maximum": 100
+      "enum": [0, 25, 50, 100]
     },
     "ThirdPartyOptOutPercentage": {
       "type": "integer",
-      "minimum": 0
-      "maximum": 100
+      "enum": [0, 25, 50, 100]
     }
   }
 }

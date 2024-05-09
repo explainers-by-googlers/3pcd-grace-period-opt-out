@@ -24,3 +24,7 @@ The /.well-known/tpcd/grace-period.json resource must follow the schema stated b
   }
 }
 ```
+
+"FirstPartyOptOutPercentage" denotes the site's opt-out value when it is in a top-level context embedding third-party cookies. For instance, if site example.com is enrolled in the first-party Deprecation Trial grace period, the `FirstPartyOptOutPercentage` on `example.com/.well-known/tpcd/grace-period.json` represents what % of Chrome clients opt out of the grace period and have third-party cookies blocked when embedded on example.com.
+
+"ThirdPartyOptOutPercentage" denotes the site's opt-out value when it is using third-party cookies in an embedded context. For instance, if site example.com is enrolled in the third-party Deprecation Trial grace period, the `ThirdPartyOptOutPercentage` on `example.com/.well-known/tpcd/grace-period.json` represents what % of Chrome clients opt out of the grace period and have third-party cookies blocked when a cross-site host embeds an example.com iframe.

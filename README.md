@@ -67,7 +67,11 @@ Possible alternatives to the proposal above include:
 
 1. Design an [origin trial](https://www.chromium.org/blink/origin-trials/) which clients apply for to receive a “re-enablement trial” cookie token. This comes with the same downsides of the current deprecation trial - sites have no mechanism for testing the tokens in production without reaching out to Chrome.
 
-1. Define a well-known file as specified above, but have each client fetch the resource, rather than Chrome. This decreases the latency for opt-out percentage value updates, and potentially gives the site more control over its opt-out populations. However, it also increases the traffic load on the well-known URI, and accentuates the privacy/security risks of the network fetches.
+1. Define a well-known file as specified above, but have each client fetch the resource, rather than Chrome. This decreases the latency for opt-out percentage value updates, and potentially gives the site more control over its opt-out populations. However, it has significant downsides:
+- It would expose client browsing history via its network requests to specific .well-known resources.
+- It would require requests to the domain of embedded sites (if there is a third-party grace period active) which adds new cross-site information leakage through timing attacks, etc.
+- It would greatly increase the traffic load to the .well-known resource and could overload its server.
+- It would add a performance cost due to an additional request for each client navigation, which could slow down the browser.
 
 ## Privacy and Security Considerations
 Although there aren't inherent security risks with fetching .well-known resources from server-side infrastructure, there is a potential vulnerability of fetching bad data which could be used to exploit Google’s servers. We will mitigate this by rate-limiting HTTP requests, by scoping the requests to only the specific .well-known file, and by not storing any irrelevant or invalid information from the file - only what matches the [spec](https://github.com/explainers-by-googlers/3pcd-deprecation-trial-staged-rollout/blob/main/well-known-specification.md).

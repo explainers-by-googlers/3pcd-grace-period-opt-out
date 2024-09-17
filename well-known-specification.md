@@ -64,22 +64,24 @@ The /.well-known/tpcd/grace-period.json resource must follow the [JSON schema](h
 "SubdomainOptOuts" allows specifying distinct opt-out values for subdomains of the current site. For instance, if site example.com is enrolled in the first-party grace period, and this is the resource defined at `example.com/.well-known/tpcd/grace-period.json`:
 
 ```
-"FirstPartyOptOutPercentage": 25,
-"ThirdPartyOptOutPercentage": 25,
-"SubdomainOptOuts": [
-  {
-    "Subdomain": "sub1.example.com",
-    "MatchSubdomains": true,
-    "FirstPartyOptOutPercentage": 100,
-    "ThirdPartyOptOutPercentage": 50
-  },
-  {
-    "Subdomain": "sub2.example.com",
-    "MatchSubdomains": false,
-    "FirstPartyOptOutPercentage": 0,
-    "ThirdPartyOptOutPercentage": 0
-  }
-]
+{
+  "FirstPartyOptOutPercentage": 25,
+  "ThirdPartyOptOutPercentage": 25,
+  "SubdomainOptOuts": [
+    {
+      "Subdomain": "sub1.example.com",
+      "MatchSubdomains": true,
+      "FirstPartyOptOutPercentage": 100,
+      "ThirdPartyOptOutPercentage": 50
+    },
+    {
+      "Subdomain": "sub2.example.com",
+      "MatchSubdomains": false,
+      "FirstPartyOptOutPercentage": 0,
+      "ThirdPartyOptOutPercentage": 0
+    }
+  ]
+}
 ```
 
 Then:

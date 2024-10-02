@@ -41,7 +41,7 @@ This explainer details a self-service system that gives sites the ability to opt
 
 Once a site is approved for the grace period, it can add a resource to its [.well-known directory](https://datatracker.ietf.org/doc/html/rfc8615) to indicate the desired opt-out percentage. The URI is registered in the [well-known URI directory](https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml) as .well-known/tpcd/grace-period.json, and its spec is defined [in this repository](https://github.com/explainers-by-googlers/3pcd-deprecation-trial-staged-rollout/blob/main/well-known-specification.md). The file is hosted under the same domain as listed in the deprecation trial application. A sample file would look like this:
 
-```
+```JSON
 {
   "ThirdPartyOptOutPercentage": 50
 }

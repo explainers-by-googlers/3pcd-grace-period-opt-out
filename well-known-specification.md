@@ -8,7 +8,7 @@ A site currently in the [third-party cookies Deprecation Trial](https://develope
 ## Content
 The /.well-known/tpcd/grace-period.json resource must follow the [JSON schema](https://json-schema.org/) stated below:
 
-```
+```JSON
 {
   "type": "object",
   "anyOf": [
@@ -63,7 +63,7 @@ The /.well-known/tpcd/grace-period.json resource must follow the [JSON schema](h
 
 "SubdomainOptOuts" allows specifying distinct opt-out values for subdomains of the current site. For instance, if site example.com is enrolled in the first-party grace period, and this is the resource defined at `example.com/.well-known/tpcd/grace-period.json`:
 
-```
+```JSON
 {
   "FirstPartyOptOutPercentage": 25,
   "ThirdPartyOptOutPercentage": 25,

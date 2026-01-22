@@ -1,3 +1,12 @@
+> [!CAUTION]
+> **Some Privacy Sandbox technologies are being phased out.**
+> 
+> See our [Update on Plans for Privacy Sandbox Technologies](https://privacysandbox.com/news/update-on-plans-for-privacy-sandbox-technologies/).
+> 
+> [Privacy Sandbox feature status](https://privacysandbox.google.com/overview/status) provides more information about the status of individual APIs and platform features.
+>
+> This repo is scheduled to be archived.
+
 # **Explainer for the Third-party Cookie Grace Period Opt-Out**
 
 This explainer outlines a mechanism to allow sites to opt out of Chrome's [third-party cookie grace period](https://developers.google.com/privacy-sandbox/cookies/temporary-exceptions/grace-period) for a percentage of users. Feedback is welcome. 
